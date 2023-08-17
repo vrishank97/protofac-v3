@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "320926489451",
+    "project_id": "protofac-v2",
+    "storage_bucket": "protofac-v2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320926489451:android:8d5d0b4d8ebdd8bd218a2e",
+        "android_client_info": {
+          "package_name": "com.example.new_protofac"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320926489451-8bjcvbo8dgl0lmm5smniq106nrh2ovq3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp2WpMDKG5TI6bqh8ZE8OJM5nFPIRWVuo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "320926489451-8bjcvbo8dgl0lmm5smniq106nrh2ovq3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320926489451:android:d7aa67a6144a6709218a2e",
+        "android_client_info": {
+          "package_name": "com.example.protofacweb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320926489451-8bjcvbo8dgl0lmm5smniq106nrh2ovq3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp2WpMDKG5TI6bqh8ZE8OJM5nFPIRWVuo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "320926489451-8bjcvbo8dgl0lmm5smniq106nrh2ovq3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
