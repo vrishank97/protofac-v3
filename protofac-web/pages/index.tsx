@@ -101,7 +101,11 @@ export default function Home() {
 
   const formatFirestoreTimestamp = (timestamp: { seconds: number; }) => {
     const date = new Date(timestamp.seconds * 1000); // Convert seconds to milliseconds
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const options: Intl.DateTimeFormatOptions = { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    };
     return date.toLocaleDateString(undefined, options);
   };
   
