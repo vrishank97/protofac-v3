@@ -129,10 +129,6 @@ export default function Home() {
       {
         tasks.map((task,index) => (
           <Division>
-            <WorkflowText>{task.taskName}</WorkflowText>
-            <br />
-            <br />
-            <br />
             <div
               style={{
                 display: "flex",
@@ -144,7 +140,7 @@ export default function Home() {
             >
               <img
                 src="./CompletedClock.svg"
-                style={{ width: "3.5rem" }}
+                style={{ width: "3.5rem",marginRight: "1rem" }}
                 alt=""
               />
               <Accordion style={{ width: "55rem", border: "1px solid black" }}>
@@ -157,8 +153,7 @@ export default function Home() {
                     <WorkflowText>Task</WorkflowText>
                     <NormalText>Last Updated on {formatFirestoreTimestamp(task.startDate)}</NormalText>
                     <br />
-                    <WorkflowText>Manufacture <span>{task.targetUnits}</span>    
-                       T shirts</WorkflowText>
+                    <WorkflowText>{task.taskName}</WorkflowText>
                   </div>
                 </AccordionSummary>
                 <AccordionDetails>
@@ -205,7 +200,6 @@ export default function Home() {
           </Division>
         ))
       }
-         
     </Container2>
   </MainPage>
   )
