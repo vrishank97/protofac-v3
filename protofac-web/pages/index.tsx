@@ -103,7 +103,7 @@ export default function Home() {
       }
     };
     fetchTasks();
-  }, []);
+  }, [projectId]);
 
   const formatFirestoreTimestamp = (timestamp: { seconds: number; }) => {
     const date = new Date(timestamp.seconds * 1000); // Convert seconds to milliseconds
