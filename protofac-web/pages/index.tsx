@@ -44,6 +44,7 @@ const Division = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 2rem;
 `;
 
 const WorkflowText = styled.div`
@@ -87,7 +88,7 @@ export default function Home() {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const taskCollection = collection(db, "projects/VSviLvPR7XmAzR42wXIQ/tasks");
+        const taskCollection = collection(db, "projects/XTfV6z3RrGMQ6AHxpu33/tasks");
         const taskSnapshot = await getDocs(taskCollection);
         const taskData = taskSnapshot.docs.map((doc) => doc.data());
         setTasks(taskData);
@@ -128,9 +129,8 @@ export default function Home() {
       {
         tasks.map((task,index) => (
           <Division>
-            <WorkflowText>Workflows: {task.taskName}</WorkflowText>
+            <WorkflowText>{task.taskName}</WorkflowText>
             <br />
-            {/* <NormalText>Creator: Roman Rajeev</NormalText> */}
             <br />
             <br />
             <div
@@ -154,7 +154,7 @@ export default function Home() {
                   id="panel1a-header"
                 >
                   <div style={{ display: "flex", flexDirection: "column" }}>
-                    <WorkflowText>Task 1</WorkflowText>
+                    <WorkflowText>Task</WorkflowText>
                     <NormalText>Last Updated on {formatFirestoreTimestamp(task.startDate)}</NormalText>
                     <br />
                     <WorkflowText>Manufacture <span>{task.targetUnits}</span>    
