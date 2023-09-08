@@ -153,18 +153,18 @@ class ProjectTasksPage extends StatefulWidget {
 }
 
 class _ProjectTasksPageState extends State<ProjectTasksPage> {
-
+  String trial = "VSviLvPR7XmAzR42wXIQ";
   String constructShareUrl(String projectId) {
-  // Construct the URL using the project ID
-  return 'https://your-website.com/projects/$projectId';
-}
+    // Construct the URL using the project ID
+    return 'http://protofac-v3.vercel.app/?projectId=$projectId';
+  }
 
-void _shareWorkflow(BuildContext context) async {
-  String projectId = widget.projectId;
-  String url = constructShareUrl(projectId);
+  void _shareWorkflow(BuildContext context) async {
+    String projectId = widget.projectId;
+    String url = constructShareUrl(projectId);
 
-  await Share.share(url);
-}
+    await Share.share(url);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -210,29 +210,28 @@ void _shareWorkflow(BuildContext context) async {
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
                         color: Colors.black,
-                  
                       ),
                     ),
                   ),
                   Spacer(),
                   InkWell(
-                    onTap: () => {_shareWorkflow(context)} ,
+                    onTap: () => {_shareWorkflow(context)},
                     child: Container(
                       padding: EdgeInsets.all(16),
                       decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius: BorderRadius.circular((10)),
-                        border: Border.all(
+                          color: Colors.transparent,
+                          borderRadius: BorderRadius.circular((10)),
+                          border: Border.all(
+                            color: Colors.blue,
+                            width: 2,
+                          )),
+                      child: Text(
+                        "Share",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
                           color: Colors.blue,
-                          width: 2,
-                        )
-                      ),
-                      child: Text("Share",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.blue,
-                      ),
+                        ),
                       ),
                     ),
                   )
