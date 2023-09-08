@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable @next/next/no-img-element */
+'use client'
 import styled from 'styled-components'
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -8,6 +9,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useEffect, useState } from "react";
 import { db } from '@/firebaseconfig';
 import { DocumentData, collection, getDocs } from 'firebase/firestore';
+import {useRouter} from 'next/router';
 
 const MainPage = styled.div`
   background-color: #a9ccff;
@@ -84,11 +86,14 @@ const GridCell = styled.div`
 export default function Home() {
 
   const [tasks, setTasks] = useState<DocumentData[]>([]);
+  const router = useRouter();
+  const {projectId} = router.query;
+  console.log(projectId);
 
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const taskCollection = collection(db, "projects/XTfV6z3RrGMQ6AHxpu33/tasks");
+        const taskCollection = collection(db, `projects/${projectId}/tasks`);
         const taskSnapshot = await getDocs(taskCollection);
         const taskData = taskSnapshot.docs.map((doc) => doc.data());
         setTasks(taskData);
