@@ -16,7 +16,7 @@ class _SignInWithEmailState extends State<SignInWithEmail> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final GoogleSignIn _googleSignIn = GoogleSignIn(
-    clientId: '665287090208-kq2r8ifcn1vnfvvod68u6m5497825ndl.apps.googleusercontent.com',
+    clientId: '665287090208-goinq21pm8hc1rvs05unkuc845dnbvfc.apps.googleusercontent.com',
   );
 
   void _showErrorDialog(String title, String message) {
