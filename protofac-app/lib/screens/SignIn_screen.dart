@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:new_protofac/screens/phone_login.dart';
 import 'main_screen.dart';
 
 class SignInWithEmail extends StatefulWidget {
@@ -376,6 +377,46 @@ class _SignInWithEmailState extends State<SignInWithEmail> {
                                       ),
                                     ],
                                   ),
+                                ),
+                              ),
+                              SizedBox(height: 20,),
+                              InkWell(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) => LoginPage(),
+                                    ),
+                                  );
+                                },
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 12, horizontal: 40),
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 24),
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(16),
+                                      border:
+                                      Border.all(color: Colors.deepOrange,)),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                          Icons.phone,
+                                          color: Colors.green,
+                                      ),
+                                      SizedBox(width: 10,),
+                                      Text(
+                                          "Sign in with OTP",
+                                          style: TextStyle(
+                                            color: Colors.blue[800],
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 16,
+                                          ),
+                                      ),
+                                    ],
+                                  )
                                 ),
                               ),
 

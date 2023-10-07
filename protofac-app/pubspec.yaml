@@ -42,6 +42,9 @@ dependencies:
   intl: ^0.18.1
   share_plus: null
   url_launcher: ^6.1.12
+  pinput: ^2.2.16
+  get: ^4.6.5
+  country_picker: ^2.0.20
 
 dev_dependencies:
   # The "flutter_lints" package below contains a set of recommended lints to
