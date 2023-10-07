@@ -15,7 +15,9 @@ class _SignInWithEmailState extends State<SignInWithEmail> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  final GoogleSignIn _googleSignIn = GoogleSignIn(
+    clientId: '665287090208-kq2r8ifcn1vnfvvod68u6m5497825ndl.apps.googleusercontent.com',
+  );
 
   void _showErrorDialog(String title, String message) {
     showDialog(
@@ -171,7 +173,7 @@ class _SignInWithEmailState extends State<SignInWithEmail> {
                               ),
                               Padding(
                                 padding:
-                                    const EdgeInsets.symmetric(horizontal: 24),
+                                    const EdgeInsets.symmetric(horizontal: 30),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -179,12 +181,12 @@ class _SignInWithEmailState extends State<SignInWithEmail> {
                                       'Email',
                                       style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: 14,
+                                        fontSize: 12,
                                         fontWeight: FontWeight.w600,
                                       ),
                                     ),
                                     const SizedBox(
-                                      height: 10,
+                                      height: 8,
                                     ),
                                     TextField(
                                       obscureText: false,
@@ -194,7 +196,7 @@ class _SignInWithEmailState extends State<SignInWithEmail> {
                                           borderRadius:
                                               BorderRadius.circular(16),
                                         ),
-                                        hintText: 'Placeholder',
+                                        hintText: 'Enter Email',
                                       ),
                                     ),
                                   ],
@@ -213,12 +215,12 @@ class _SignInWithEmailState extends State<SignInWithEmail> {
                                       'Password',
                                       style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: 14,
+                                        fontSize: 12,
                                         fontWeight: FontWeight.w600,
                                       ),
                                     ),
                                     const SizedBox(
-                                      height: 10,
+                                      height: 8,
                                     ),
                                     TextField(
                                       obscureText: true,
@@ -228,7 +230,7 @@ class _SignInWithEmailState extends State<SignInWithEmail> {
                                           borderRadius:
                                               BorderRadius.circular(16),
                                         ),
-                                        hintText: 'Placeholder',
+                                        hintText: 'Enter Password',
                                       ),
                                     ),
                                   ],
@@ -237,58 +239,85 @@ class _SignInWithEmailState extends State<SignInWithEmail> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              InkWell(
-                                onTap: _signUp,
-                                child: Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 12, horizontal: 40),
-                                  margin: const EdgeInsets.symmetric(
-                                      horizontal: 24),
-                                  decoration: BoxDecoration(
-                                    color: Colors.lightBlue.shade400,
-                                    borderRadius: BorderRadius.circular(16),
-                                  ),
-                                  child: const Center(
-                                    child: Text(
-                                      "Sign Up",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 16,
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  InkWell(
+                                    onTap: _signUp,
+                                    child: Container(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 12, horizontal: 24),
+                                      decoration: BoxDecoration(
+                                        color: Colors.lightBlue.shade400,
+                                        borderRadius: BorderRadius.circular(16),
+                                      ),
+                                      child: const Center(
+                                        child: Text(
+                                          "Sign Up",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 16,
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
+                                  InkWell(
+                                    onTap: _signIn,
+                                    child: Container(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 12, horizontal: 24),
+                                      decoration: BoxDecoration(
+                                        color: Colors.lightBlue.shade400,
+                                        borderRadius: BorderRadius.circular(16),
+                                      ),
+                                      child: const Center(
+                                        child: Text(
+                                          "Login",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                               const SizedBox(
                                 height: 20,
                               ),
-                              InkWell(
-                                onTap: _signIn,
-                                child: Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 12, horizontal: 40),
-                                  margin: const EdgeInsets.symmetric(
-                                      horizontal: 24),
-                                  decoration: BoxDecoration(
-                                    color: Colors.lightBlue.shade400,
-                                    borderRadius: BorderRadius.circular(16),
-                                  ),
-                                  child: const Center(
-                                    child: Text(
-                                      "Login",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 16,
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: Divider(
+                                        thickness: 0.5,
+                                        color: Colors.grey[400],
                                       ),
                                     ),
-                                  ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                                      child: Text(
+                                        'Or continue with',
+                                        style: TextStyle(color: Colors.grey[700]),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Divider(
+                                        thickness: 0.5,
+                                        color: Colors.grey[400],
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                              const SizedBox(
-                                height: 20,
-                              ),
+                              SizedBox(height: 20,),
                               InkWell(
                                 onTap: _signInWithGoogle,
                                 child: Container(
@@ -301,18 +330,56 @@ class _SignInWithEmailState extends State<SignInWithEmail> {
                                       borderRadius: BorderRadius.circular(16),
                                       border:
                                           Border.all(color: Colors.blueAccent)),
-                                  child: const Center(
-                                    child: Text(
-                                      "Sign in with Google",
-                                      style: TextStyle(
-                                        color: Colors.lightBlue,
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 16,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Image.asset(
+                                        "assets/Icons/GoogIcon.png",
+                                        height: 24,
+                                        // width: 500,
                                       ),
-                                    ),
+                                      SizedBox(width: 10), // Add some spacing between the icon and text
+                                      Text(
+                                        "Sign",
+                                        style: TextStyle(
+                                          color: Colors.red,
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                      SizedBox(width: 5),
+                                      Text(
+                                        "in",
+                                        style: TextStyle(
+                                          color: Colors.yellow[800],
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                      SizedBox(width: 5),
+                                      Text(
+                                        "with",
+                                        style: TextStyle(
+                                          color: Colors.green[700],
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                      SizedBox(width: 5),
+                                      Text(
+                                        "Google",
+                                        style: TextStyle(
+                                          color: Colors.blue[600],
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
+
+
                             ],
                           ),
                         ),
